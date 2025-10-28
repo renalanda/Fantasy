@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FantasyDraft Optimizer - AI-Powered Fantasy Football</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>🏈 FantasyDraft Optimizer</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#dashboard" class="nav-link">Dashboard</a>
+                <a href="#draft" class="nav-link">Draft Tool</a>
+                <a href="#analytics" class="nav-link">Analytics</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">AI-Powered Fantasy Football Optimization</h2>
+                <p class="hero-subtitle">Make data-driven draft decisions with statistical analysis and machine learning predictions</p>
+                <button class="cta-button" onclick="scrollToSection('dashboard')">Start Optimizing</button>
+            </div>
+        </section>
+
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard">
+            <div class="container">
+                <h2 class="section-title">Player Performance Predictions</h2>
+                <div class="prediction-controls">
+                    <div class="control-group">
+                        <label for="position-filter">Position:</label>
+                        <select id="position-filter" onchange="filterPlayers()">
+                            <option value="all">All Positions</option>
+                            <option value="QB">Quarterback</option>
+                            <option value="RB">Running Back</option>
+                            <option value="WR">Wide Receiver</option>
+                            <option value="TE">Tight End</option>
+                            <option value="K">Kicker</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="week-selector">Week:</label>
+                        <select id="week-selector" onchange="updatePredictions()">
+                            <option value="1">Week 1</option>
+                            <option value="2">Week 2</option>
+                            <option value="3">Week 3</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="players-grid" id="players-grid">
+                    <!-- Player cards will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Draft Tool Section -->
+        <section id="draft" class="draft-tool">
+            <div class="container">
+                <h2 class="section-title">Draft Optimizer</h2>
+                <div class="draft-interface">
+                    <div class="draft-controls">
+                        <div class="control-group">
+                            <label for="draft-position">Your Draft Position:</label>
+                            <select id="draft-position" onchange="updateDraftRecommendations()">
+                                <option value="1">1st Pick</option>
+                                <option value="2">2nd Pick</option>
+                                <option value="3">3rd Pick</option>
+                                <option value="4">4th Pick</option>
+                                <option value="5">5th Pick</option>
+                                <option value="6">6th Pick</option>
+                                <option value="7">7th Pick</option>
+                                <option value="8">8th Pick</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label for="league-size">League Size:</label>
+                            <select id="league-size" onchange="updateDraftRecommendations()">
+                                <option value="8">8 Teams</option>
+                                <option value="10">10 Teams</option>
+                                <option value="12">12 Teams</option>
+                                <option value="14">14 Teams</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="recommendations">
+                        <h3>Top Recommendations for Your Pick</h3>
+                        <div class="recommendation-cards" id="recommendation-cards">
+                            <!-- Recommendations will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section id="analytics" class="analytics">
+            <div class="container">
+                <h2 class="section-title">Team Analysis</h2>
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Your Team Strength</h3>
+                        <div class="strength-meter">
+                            <div class="strength-bar" id="strength-bar"></div>
+                            <span class="strength-score" id="strength-score">0/100</span>
+                        </div>
+                        <p class="strength-description" id="strength-description">Add players to see your team strength</p>
+                    </div>
+                    
+                    <div class="analytics-card">
+                        <h3>Positional Breakdown</h3>
+                        <div class="position-breakdown" id="position-breakdown">
+                            <div class="position-item">
+                                <span class="position-name">QB</span>
+                                <span class="position-count">0</span>
+                            </div>
+                            <div class="position-item">
+                                <span class="position-name">RB</span>
+                                <span class="position-count">0</span>
+                            </div>
+                            <div class="position-item">
+                                <span class="position-name">WR</span>
+                                <span class="position-count">0</span>
+                            </div>
+                            <div class="position-item">
+                                <span class="position-name">TE</span>
+                                <span class="position-count">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 FantasyDraft Optimizer. Built with AI and statistical analysis.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
